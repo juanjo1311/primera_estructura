@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props;
+import { Icon } from 'astro-icon/components';
 const products =[
 	{
 		icon:"",
@@ -26,10 +27,20 @@ const products =[
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="header">
-			<div class="container header_info">
-				Contenido de la cabecera
+		<div class="bg-zinc-800">
+			<div class="container flex items-center">
+				<img src="public/logo.webp" class="h-16">
+				<div class=" relative">
+					<input type="search" placeholder="buscar..." class="h-9 rounded-full pl-5 pr-14 outline-none">
+					<div class="bg-zinc-800 right-1 top-[2px] absolute inline-block text-white rounded-2xl py-1 px-2">
+						<Icon name="mdi:search" class="size-6" />
+					</div>
+				</div>
+				<Icon name="mdi:qrcode" class="text-white size-9 ml-7"  />
+				<p class="text-white ml-2 leading-5">Descargar app <br> de Aliexpress</p>
+				<Icon name="flagpack:co" class="ml-7"/>
 			</div>
+				
 		</div>
 		<div class="container banner">
 			BANNER
@@ -77,9 +88,7 @@ const products =[
 	.main_menu a:hover{
 		background: #f0a202;
 	}
-	.header{
-		background: orange;
-	}
+	
 	.header_info{
 		height: 80px;
 	}
@@ -89,7 +98,7 @@ const products =[
 	.product_list{
 		display: flex;
 		height: 100px;
-		margin-top: 8px;n
+		margin-top: 8px;
 	}
 	.product_list div{
 		height: 100%;
@@ -109,11 +118,7 @@ const products =[
 	.footer{
 		height: 80px;
 	}
-	.container{
-		max-width: 1280px;
-		/* background: blue; */
-		margin: 0 auto;
-	}
+	
 
 	html, body {
 		margin: 0;
